@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-pi-pico-w", "id": "pico1", "top": 60, "left": 163.35, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 107.65, "left": 10, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 165.25,
+      "left": 10,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 232.45,
+      "left": 10,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 201.6,
+      "left": 73.4,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 211.2,
+      "left": 73.4,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 220.8,
+      "left": 73.4,
+      "attrs": { "value": "330" }
+    }
+  ],
+  "connections": [
+    [ "led3:C", "pico1:GND.2", "green", [ "v0", "h-38", "v-182.4", "h134.4", "v48" ] ],
+    [ "led2:C", "pico1:GND.2", "green", [ "v0", "h-38", "v-115.2", "h134.4", "v48" ] ],
+    [ "led1:C", "pico1:GND.2", "green", [ "v0", "h-38", "v-57.6", "h134.4", "v48" ] ],
+    [ "pico1:GP11", "r1:2", "green", [ "h-38.4" ] ],
+    [ "pico1:GP13", "r3:2", "green", [ "h0" ] ],
+    [ "pico1:GP12", "r2:2", "green", [ "h0" ] ],
+    [ "r1:1", "led1:A", "green", [ "v0" ] ],
+    [ "r2:1", "led2:A", "green", [ "v0", "h-9.6", "v-9.6" ] ],
+    [ "r3:1", "led3:A", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "author": "Davi Macêdo",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-pi-pico-w", "id": "pico", "top": -22.45, "left": 185.95, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -3.4,
+      "left": 96,
+      "attrs": { "color": "black" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 147.95,
+      "left": 96,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 167.15,
+      "left": 96,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 186.35,
+      "left": 96,
+      "attrs": { "value": "330" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 15.6, "left": 51.8, "attrs": { "color": "blue" } },
+    { "type": "wokwi-led", "id": "led2", "top": 54, "left": 51.8, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 92.4,
+      "left": 51.8,
+      "attrs": { "color": "limegreen" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:GND.1", "btn1:1.r", "black", [ "h0" ] ],
+    [ "pico:GP5", "btn1:2.r", "green", [ "h-19.2", "v-19.2" ] ],
+    [ "pico:GND.4", "r3:2", "black", [ "h-19.2", "v38.44" ] ],
+    [ "pico:GND.4", "r2:2", "black", [ "h-19.2", "v19.24" ] ],
+    [ "pico:GND.4", "r1:2", "black", [ "h0" ] ],
+    [ "pico:GP13", "led3:A", "green", [ "h0" ] ],
+    [ "pico:GP12", "led2:A", "green", [ "h-105.6", "v-38.36" ] ],
+    [ "pico:GP11", "led1:A", "green", [ "h-96", "v-67.2" ] ],
+    [ "led3:C", "r1:1", "green", [ "v0" ] ],
+    [ "r2:1", "led2:C", "green", [ "v0", "h-48", "v-76.8" ] ],
+    [ "r3:1", "led1:C", "green", [ "v0", "h-67.2", "v-134.4" ] ]
+  ],
+  "dependencies": {}
+}
